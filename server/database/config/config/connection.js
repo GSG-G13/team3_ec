@@ -1,5 +1,7 @@
-import Pool from 'pg';
+import pkg from 'pg';
 import { } from 'dotenv/config';
+
+const { Pool } = pkg;
 
 const { DB_URL, NODE_ENV } = process.env;
 const option = {
