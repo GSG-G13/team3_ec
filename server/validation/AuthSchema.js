@@ -12,7 +12,4 @@ export const SignUpSchema = Joi.object({
   image_url: Joi.string(),
 });
 
-export const LoginSchema = Joi.object({
-  email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
-  password: Joi.string().min(6).required(),
-});
+

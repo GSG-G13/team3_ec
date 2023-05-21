@@ -1,4 +1,4 @@
-import connection from '../config/config/connection.js';
+import connection from '../../config/config/connection.js';
 
 export const addUserQuery = (userData) => {
   const {
