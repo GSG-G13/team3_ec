@@ -1,4 +1,4 @@
-import bcrybt from 'bcrypt';
+import * as bcrybt from 'bcrypt';
 import { SignUpSchema } from '../validation/AuthSchema.js';
 import { addUserQuery } from '../database/queries/users.js';
 import { jwtSign } from '../helper/jwtSign.js';
@@ -14,7 +14,8 @@ export const addUser = (req, res, next) => {
     .then((hashedPassword) => {
       req.body.password = hashedPassword;
       return addUserQuery(req.body);
-    }).then((data) => {
+    })
+    .then((data) => {
       userData = data.rows[0];
       return jwtSign(data.rows[0]);
     })
