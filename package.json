@@ -8,5 +8,23 @@
     "eslint": "^8.41.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5"
-  }
+  },
+  "name": "team3_ec",
+  "description": "<h3>Schema DataBase</h3>",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G13/team3_ec.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G13/team3_ec/issues"
+  },
+  "homepage": "https://github.com/GSG-G13/team3_ec#readme"
 }
