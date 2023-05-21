@@ -31,6 +31,7 @@ export const addUser = (req, res, next) => {
         next(new CustomError(400, err.details));
       } else {
         next(new CustomError(400, 'This email is already existed'));
+        
       }
     });
 };
