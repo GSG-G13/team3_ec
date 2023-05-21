@@ -1,7 +1,7 @@
 
 
 export const  errHandling  = (err, req, res, next) => {
-    console.error(err.stack);
+    console.error(err.stack,"hhhhhhhhhh");
   
     const statusCode = err.status || 501;
     const message = err.message || 'Unknown Error';
