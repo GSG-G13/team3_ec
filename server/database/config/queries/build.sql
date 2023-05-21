@@ -16,14 +16,13 @@ CREATE TABLE users (
 
 CREATE TABLE products(
   id SERIAL PRIMARY KEY,
-  user_id INT,
   name VARCHAR(255),
   price INT,
   category VARCHAR(40),
+   description TEXT,
   image_url TEXT,
   in_stack INT,
-  description TEXT,
-  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE ON UPDATE CASCADE
+ 
 );
 CREATE TABLE cart (
   id SERIAL PRIMARY KEY,
