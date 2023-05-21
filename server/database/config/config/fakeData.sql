@@ -1,4 +1,4 @@
-INSERT INTO products ( name, price, category, description, image_url, in_stack)
+INSERT INTO products ( name, price, category, description, image_url, in_stock)
 VALUES
   ( 'Ficus benjamina Braid Extra Large', 29500,'indoor plants', 'The Ficus benjamina Braid is an extra-large plant that adds a unique touch to any space. It features twisted, braided stems and lush foliage, making it a beautiful addition to your indoor garden.','https://cdn.shopify.com/s/files/1/0253/6701/9565/products/Ficus-Benjamina-Braid-Grow-Pot-Extra-Large.jpg?v=1681052730',5),
    ('Norfolk Island Pine', 1950,'indoor plants', 'The Norfolk Island Pine is a charming plant that resembles a miniature Christmas tree. It is a low-maintenance indoor plant that brings a festive vibe to any room with its graceful branches and soft needles.', 'https://cdn.shopify.com/s/files/1/0253/6701/9565/products/Detail-Ficus-Benjamina-Braid-Grow-Pot-Extra-Large.jpg?v=1681052730',5),
