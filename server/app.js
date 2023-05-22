@@ -5,7 +5,7 @@ import express from 'express';
 //import { join } from 'path';
 import cookieParser from 'cookie-parser';
 import router from './routers/router.js';
-
+import cors from 'cors';
 import { } from 'dotenv/config';
 
 // const cookieParser = require('cookie-parser')
@@ -17,7 +17,7 @@ import { } from 'dotenv/config';
 const app = express();
 
 app.use(cookieParser());
-
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
