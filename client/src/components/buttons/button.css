@@ -1,0 +1,11 @@
+.text-button{
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px;
+}
+
+.text-button:hover {
+    border: 1px solid #000
+}

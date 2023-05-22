@@ -1,17 +1,6 @@
 import './nav.css'
 import Search from '../Searchinput/Search'
-import { Card } from '../Card/Card'
-export const getData = async () => {
-    try {
-        const response = await fetch(`http://localhost:5000/products`)
-        const data = await response.json()
-        console.log(data);
-    } catch (err) {
-        console.log(err);
-    }
-
-}
-getData()
+import { Filter } from '../../pages/Filter'
 export const Nav = () => {
 
 
@@ -45,12 +34,10 @@ export const Nav = () => {
                                     <i class="nav-icon fas fa-user-circle"></i>
                                 </a>
 
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-
-        </>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     )
 }

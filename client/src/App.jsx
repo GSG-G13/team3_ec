@@ -1,11 +1,12 @@
+import'./app.css'
 import { createBrowserRouter } from "react-router-dom";
-import { Nav } from './components/Nav/nav';
+import { HomeLayout } from "./layout/HomeLayout";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Nav/>
+      element: <HomeLayout />
     }
   ])
 
