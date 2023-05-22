@@ -1,8 +1,10 @@
 import './nav.css'
 import Search from '../Searchinput/Search'
+import { Filter } from '../../pages/Filter'
 export const Nav = () => {
 
     return (
+        <>
         <header className="navbar-home">
             <nav className="navbar-wrapper">
                 <div className="navbar-left-aligned">
@@ -36,5 +38,7 @@ export const Nav = () => {
                 </div>
             </nav>
         </header>
+        
+        </>
     )
 }

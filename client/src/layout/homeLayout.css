@@ -1,0 +1,11 @@
+.main-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.products-list{
+    flex: 5
+}
+.filter-page {
+    flex: 1;
+}

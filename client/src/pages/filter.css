@@ -1,0 +1,14 @@
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-h3 {
+    margin: 1.5rem 0;
+}
+.filter-page{
+    background-color: #eee;
+    min-height: 90vh;
+    padding: 12px
+}
