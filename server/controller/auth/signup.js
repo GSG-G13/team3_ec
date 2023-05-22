@@ -24,11 +24,12 @@ const addUser = (req, res, next) => {
         data: userData,
       });
     })
-    .catch((err) => {
-      if (err.isJoi) {
-        next(new CustomError(400, err.details));
+    .catch((error) => {
+      if (error.name === 'ValidationError') {
+        const message = error.details.map((i) => i.message);
+        next(new CustomError(400, message));
       } else {
-        next(new CustomError(400, 'This email is already existed'));
+        next(error);
       }
     });
 };

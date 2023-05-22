@@ -3,7 +3,6 @@ import {
   logOutController, signinController, addUser, getProducts,
 } from '../controller/index.js';
 import { errHandling } from '../middleware/error.js';
-import { getProducts } from '../controller/getProducts.js'
 import authChecker from '../middleware/authChecker.js';
 import { getCartItem } from '../controller/getCartItem.js';
 import addCartItem from '../controller/addCartItem.js';
