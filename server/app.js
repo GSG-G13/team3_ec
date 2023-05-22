@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 // require('dotenv').config()
 
 import express from 'express';

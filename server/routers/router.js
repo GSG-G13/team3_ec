@@ -1,12 +1,13 @@
 import express from 'express';
-import addUser from '../controller/auth/signup.js';
-import signinController from "../controller/auth/signin.js";
-import logOutController from "../controller/auth/logout.js";
+import {
+  logOutController, signinController, addUser, getProducts,
+} from '../controller/index.js';
 import { errHandling } from '../middleware/error.js';
 
 const router = express.Router();
 
 router.post('/signup', addUser, errHandling);
+router.get('/products', getProducts);
 router.post('/signin', signinController, errHandling);
 router.use('/logout', logOutController);
 
