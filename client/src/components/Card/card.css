@@ -1,0 +1,43 @@
+.bttn-primary {
+    background-color: #45523e;
+    color: #f5ece5;
+    display: inline-block;
+    padding: 0.3em 3.1em;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
+.card-vertical {
+    background-color: var(--complimentary-text-color);
+    display: flex;
+    flex-direction: column;
+    max-width: 13.75rem;
+    text-align: center;
+    background-color: transparent;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.responsive-img {
+    block-size: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.card-content-container {
+    padding: 0;
+}
+
+.bttn-primary:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #323b2e;
+}
+
+.card-image-container:hover {
+    transition: 0.3s ease-in-out all;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
