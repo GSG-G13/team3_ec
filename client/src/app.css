@@ -1,4 +1,28 @@
-*{
+* {
     padding: 0;
     margin: 0;
+}
+
+.bttn-primary {
+    background-color: #45523e;
+    color: #f5ece5;
+    display: inline-block;
+    padding: 0.3em 3.1em;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
+.bttn-primary:hover {
+    transition: all 0.3s ease 0s;
+    background-color: #323b2e;
+}
+
+.responsive-img {
+    block-size: auto;
+    max-width: 100%;
+    object-fit: cover;
 }

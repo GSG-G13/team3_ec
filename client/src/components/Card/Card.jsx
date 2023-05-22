@@ -1,5 +1,5 @@
 import './card.css'
-export const Card = () => {
+const Card = () => {
     return <div className="card-vertical">
         <div className="card-image-container">
             <img
@@ -23,3 +23,4 @@ export const Card = () => {
         </div>
     </div>
 }
+export default Card
