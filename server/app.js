@@ -27,6 +27,6 @@ const { PORT } = process.env;
 
 app.set('port', PORT || 5000);
 
-app.use(router);
+app.use('/api/v1', router);
 
 export default app;

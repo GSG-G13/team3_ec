@@ -1,0 +1,14 @@
+.price-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+label{
+    display: block;
+}
+
+.radio{
+    margin-right: 16px;
+}
