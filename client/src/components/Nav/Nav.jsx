@@ -4,9 +4,7 @@ import { Filter } from '../../pages/Filter'
 export const Nav = () => {
 
 
-    return (
-        <>
-            <header className="navbar-home">
+    return (<header className="navbar-home">
                 <nav className="navbar-wrapper">
                     <div className="navbar-left-aligned">
                         <div className="logo-wrapper"><img alt='logo' src="http://localhost:3001/static/media/plant.a7fecfd9.png" className="responsive-img" /></div>
