@@ -26,7 +26,7 @@ const signinController = (req, res, next) => {
       throw new CustomError(400, 'Invalid password');
     })
     .then((token) => {
-      res.cookie('token', token, { httpOnly: true, secure: true }).json({
+      res.cookie('token', token).json({
         status: 200,
         message: 'Sign In successfully ',
       });
@@ -34,7 +34,7 @@ const signinController = (req, res, next) => {
     .catch((error) => {
       if (error.name === 'ValidationError') {
         const message = error.details.map((i) => i.message);
-        throw new CustomError(400, message);
+        next(new CustomError(400, message));
       } else {
         next(error);
       }
