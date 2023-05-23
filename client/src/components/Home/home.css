@@ -27,12 +27,14 @@ h1 {
     line-height: 1.2;
     font-weight: 600;
 }
+
 .bttn-lg {
     padding: 0.5em 1.2em;
     font-size: 1.25rem;
     border-radius: 30px;
 }
-a {
+
+.shop-btn {
     text-decoration: none;
     color: white;
 
