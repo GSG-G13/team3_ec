@@ -1,6 +1,7 @@
 import './homeLayout.css'
-import { Nav } from "../components/Nav/Nav";
+import { Nav } from '../components/Nav/nav';
 import { Filter } from "../pages/Filter";
+import { Outlet } from 'react-router-dom';
 
 export const HomeLayout = () => {
   return (
@@ -9,8 +10,7 @@ export const HomeLayout = () => {
         <Nav />
       </header>
       <main className='main-page'>
-        <Filter />
-        <div className="products-list">Hello</div>
+        <Outlet />
       </main>
     </>
   );

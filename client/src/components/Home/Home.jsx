@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import pdt from '../../assets/hero-img.jpg'
 import './home.css'
 export const Home = () => {
@@ -5,9 +6,9 @@ export const Home = () => {
         <div className="text-overlay">
             <h1 className="text-overlay-title">MAKE YOUR HOME A GREENER PLACE</h1>
             <button className="bttn bttn-primary bttn-lg">
-                <a className="shop-btn" href="111">
+                <Link className="shop-btn" to={'/products'}>
                     SHOP NOW
-                </a>
+                </Link>
             </button>
         </div>
         <a href="#">
