@@ -27,11 +27,14 @@
     object-fit: cover;
 }
 
-.products-container{
+.products-container {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    width: 100%;
+    gap: 3rem;
 }
 
-.filter-page{
+.filter-page {
     position: sticky;
+    width: 19%;
 }

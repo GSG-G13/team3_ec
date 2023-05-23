@@ -7,7 +7,7 @@ export const HomeLayout = () => {
   return (
     <>
       <header>
-        <Nav />
+        <Nav/>
       </header>
       <main className='main-page'>
         <Outlet />
