@@ -33,7 +33,7 @@ export const Nav = () => {
             </li>
           </ul>
           <div className="navbar-right-aligned">
-            <Search />
+            <Search  />
             <ul className="navbar-nav navbar-fixed">
               <li className="nav-item">
                 <Link to={"/cart"} className="nav-icon-link">
