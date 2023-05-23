@@ -26,3 +26,12 @@
     max-width: 100%;
     object-fit: cover;
 }
+
+.products-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-page{
+    position: sticky;
+}

@@ -1,5 +1,8 @@
 import './nav.css'
 import Search from '../Searchinput/Search'
+import { Link, NavLink } from 'react-router-dom'
+import { Home } from '../Home/Home'
+import { ProductsPage } from '../../pages/ProductsListPage'
 export const Nav = () => {
 
 
@@ -13,10 +16,10 @@ export const Nav = () => {
                 </div>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href='/' className='nav-item-link'>HOME</a>
+                        <NavLink to={'/'} className='nav-item-link'>HOME</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a href='/Products' className='nav-item-link'>PRODUCTS</a>
+                        <NavLink to={'/products'} className='nav-item-link'>PRODUCTS</NavLink>
                     </li>
                 </ul>
                 <div className="navbar-right-aligned">
@@ -28,9 +31,9 @@ export const Nav = () => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href='/' className="nav-icon-link">
+                            <Link to={'/login'} className="nav-icon-link">
                                 <i class="nav-icon fas fa-user-circle"></i>
-                            </a>
+                            </Link>
 
                         </li>
                     </ul>
