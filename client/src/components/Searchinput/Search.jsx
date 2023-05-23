@@ -1,12 +1,14 @@
 import './search.css'
- import { useState } from 'react';
-const Search = () => {
 
-    const [valueI, setInput] = useState('');
+
+const Search = ({ setSearchValue }) => {
+    const handleChange = (e) => {
+        setSearchValue(e.target.value)
+    }
     return (
         <div className="pseudo-search">
-            <input type="text" placeholder="Search..." onChange={(e) => setInput(e.target.value)} autofocus required />
-            <button className="fa fa-search" type="submit"></button>
+            <input type="search" placeholder="Search..." autoFocus required onChange={handleChange} />
+            <button className="fa fa-search" type="submit" ></button>
         </div>)
 
 }
