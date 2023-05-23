@@ -23,7 +23,7 @@ const fetctSignUp = (name,email, password) => {
         }
         ,
         body: JSON.stringify({
-            name:name,
+            username:name,
             email: email,
             type:"user",
             password: password,

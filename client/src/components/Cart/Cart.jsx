@@ -1,12 +1,12 @@
 import './cart.css'
 
-const Cart = () => {
+const CartCard = ({ cartProducts }) => {
     return (
         <div className="card-horizontal cart-item" >
             <div className="card-image">
                 <img
                     className="responsive-img"
-                    src="https://th.bing.com/th/id/OIP.MBlOJPg-beF5E6q2yR5k9gAAAA?pid=ImgDet&rs=1"
+                    src={cartProducts.image_url}
                     alt=""
                 />
             </div>
@@ -15,16 +15,16 @@ const Cart = () => {
                     <i className="fas fa-times" aria-hidden="true"></i>
                 </button>
                 <div className="text-conatiner">
-                    <h2 className="card-title">plant name</h2>
-                    <p className="card-text">333</p>
+                    <h2 className="card-title">{cartProducts.name}</h2>
+                    <p className="card-text">{cartProducts.description}</p>
                     <h5 className="card-price">
-                        333
+                        {cartProducts.price}
                     </h5>
-                    <div className="button-container my-2 items-center">  <button className="bttn text-sm icon-btn">
+                    <div className="button-container  items-center">  <button className="bttn  icon-btn">
                         <i className='fas fa-minus'></i>
                     </button>
-                        <div className="">5</div>
-                        <button className="bttn text-sm icon-btn">
+                        <div className="">{cartProducts.amount}</div>
+                        <button className="bttn  icon-btn">
                             <i className='fas fa-plus'></i>
                         </button></div>
 
@@ -34,4 +34,4 @@ const Cart = () => {
         </div>
     )
 }
-export default Cart
+export default CartCard

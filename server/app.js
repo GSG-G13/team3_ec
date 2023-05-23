@@ -16,6 +16,10 @@ import { } from 'dotenv/config';
 
 const app = express();
 
+const { PORT } = process.env;
+
+app.set('port', PORT || 5000);
+
 app.use(cookieParser());
 app.use(cors())
 app.use(express.json());
@@ -23,9 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 
 // app.use(express.static(join(__dirname, '..', 'public')));
 
-const { PORT } = process.env;
-
-app.set('port', PORT || 5000);
 
 app.use('/api/v1', router);
 
