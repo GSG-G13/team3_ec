@@ -1,6 +1,7 @@
 import { Filter } from "./Filter"
 import { useEffect, useState } from 'react'
 import CardList from "../components/CardList/CardList"
+import { ToastContainer, toast } from 'react-toastify';
 
 export const ProductsPage = () => {
     const [products, setProducts] = useState([]);
@@ -14,8 +15,9 @@ export const ProductsPage = () => {
     }
     return (
         <div className="products-container">
-            <Filter setProducts={handleChange} products={products}/>
-            <CardList products={products}/>
+            <Filter />
+            <CardList />
+            <ToastContainer/>
         </div>
     )
 }

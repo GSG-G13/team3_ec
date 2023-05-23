@@ -1,4 +1,6 @@
 import './search.css'
+
+
 const Search = ({ setSearchValue }) => {
     const handleChange = (e) => {
         setSearchValue(e.target.value)
@@ -10,4 +12,5 @@ const Search = ({ setSearchValue }) => {
         </div>)
 
 }
+
 export default Search;

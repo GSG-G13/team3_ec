@@ -1,6 +1,17 @@
 import './cart.css'
+import { useNavigate } from "react-router-dom";
 
 const CartCard = ({ cartProducts }) => {
+    const useNavig = useNavigate();
+   
+    const handlerDeleteCart = () => {
+        
+        fetch(`api/v1/cart/${cartProducts.id}`, {
+            method: "DELETE",
+        }).then((data) => data.json())
+        .then((data)=>console.log(data))
+        useNavig('/cart')
+    }
     return (
         <div className="card-horizontal cart-item" >
             <div className="card-image">
@@ -11,7 +22,7 @@ const CartCard = ({ cartProducts }) => {
                 />
             </div>
             <div className="card-horizontal-content-container">
-                <button className="btn-close py-2" id="close-btn-alert">
+                <button className="btn-close py-2" id="close-btn-alert" onClick={handlerDeleteCart}>
                     <i className="fas fa-times" aria-hidden="true"></i>
                 </button>
                 <div className="text-conatiner">
