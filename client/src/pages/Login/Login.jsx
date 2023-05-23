@@ -3,8 +3,50 @@ import { useEffect, useState } from "react";
 import Social from "../../components/social/Social";
 import InputField from "../../components/inputs/InputFiled";
 import Overlay from "../../components/Overlay/Overlay.jsx";
+import { useNavigate } from "react-router-dom";
+import { fetctLogin, fetctSignUp } from "./fetchData";
 const Login = () => {
 	const [active, setActive] = useState(false);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [clicked, setClicked] = useState(false);
+	const [clickSignUp, setClickSignUp] = useState(false)
+	const [name, setName] = useState("");
+	const useNavig = useNavigate();
+	const handlerEmail = (e) => {
+		setEmail(e.target.value);
+	}
+
+	const handlerPassword = (e) => {
+		setPassword(e.target.value);
+	}
+
+		fetctLogin(email, password)
+			.then(data => {
+				console.log(data);
+				if (data.status === 200) {
+					useNavig('/')
+				}
+			})
+	
+
+	// useEffect(() => {
+
+	// 	fetctSignUp(name, email, password)
+	// 		.then(data => {
+	// 			console.log(data);
+
+	// 		})
+
+
+	// }, [setClickSignUp])
+
+
+
+
+
+
+
 	return (
 		<>
 			<div className={active ? "container  right-panel-active" : "container"} id="container">
@@ -15,11 +57,11 @@ const Login = () => {
 						<Social />
 						<span>or use your email for registration</span>
 
-						<InputField type="text" placeholder="Name" />
-						<InputField type="email" placeholder="Email" />
-						<InputField type="Password" placeholder="Password" />
+						<input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+						<input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+						<input type="Password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
 
-						<button className="btn">Sign Up</button>
+						<button className="btn" onClick={setClickSignUp}>Sign Up</button>
 					</div>
 				</div>
 
@@ -29,17 +71,17 @@ const Login = () => {
 						<Social />
 						<span>or use your account</span>
 
-						<InputField type="text" placeholder="Name" />
-						<InputField type="email" placeholder="Email" />
+						<input className="inputFiled" type="email" placeholder="Email" onChange={handlerEmail} />
+						<input type="password" placeholder="password" onChange={handlerPassword} />
 
 						<a href="#">Forgot your password?</a>
-						<button className="btn" >Sign In</button>
+						<button className="btn" onClick={() => setClicked(!clicked)}>Sign In</button>
 					</div>
 				</div>
 				<div class="overlay-container">
 					<div class="overlay">
 						<div class="overlay-panel overlay-left">
-							<Overlay header_text="Welcome Back!" pText="To keep connected with us please login with your personal info"/>
+							<Overlay header_text="Welcome Back!" pText="To keep connected with us please login with your personal info" />
 							<button class="ghost btn" id="signIn" onClick={() => setActive(false)}>Sign In</button>
 						</div>
 						<div class="overlay-panel overlay-right">
