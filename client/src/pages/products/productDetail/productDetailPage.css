@@ -1,17 +1,11 @@
-.container {
-    background-color: var(--primary-color);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .box {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 12%);
+    box-shadow: 5px 5px 10px 10px rgb(0, 0, 0, 12%);
     padding: 45px;
-    margin: 15px 0;
+    margin: 15px auto;
     width: 950px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -124,6 +118,31 @@
 
 .box .description .social a:hover {
     color: var(--secondary-color);
+}
+
+.cart-btn{
+    width: 120px;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 3px 3px #135c015d;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.amount-counter{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount-counter button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.4rem;
 }
 
 @media (max-width: 991px) {

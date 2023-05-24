@@ -4,12 +4,49 @@
     max-width: 13.75rem;
     text-align: center;
     background-color: transparent;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
     cursor: pointer;
     color: #354d0d;
+    justify-content: space-evenly;
+    padding: 12px;
+    border-radius: 12px;
 }
 
-.card-image-container:hover {
+.card-vertical:hover {
     transition: 0.3s ease-in-out all;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.card-title{
+    color: black;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    /* Maximum number of lines to display */
+    overflow: hidden;
+}
+.card-text {
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* Maximum number of lines to display */
+    overflow: hidden;
+
+    align-items: flex-start;
+
+
+}
+
+.product-price{
+    font-size: large;
+   font-weight: 700;
+    margin: 1rem 0;
+}
+
+.bttn-primary{
+    border-radius: 25px;
 }

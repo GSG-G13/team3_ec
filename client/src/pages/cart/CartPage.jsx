@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import CartCard from "../components/Cart/Cart";
+import './CartPage.css'
+import CartCard from "../../components/Card/Cart/Cart";
 
 export const CartPage = () => {
   const [cartProducts, setCartProducts] = useState([]);
@@ -10,12 +11,13 @@ export const CartPage = () => {
         console.log(data);
         setCartProducts(data.data);
       });
-  }, []);
+  },[] );
   console.log(cartProducts);
   return (
-    <div className="card-page">
-      {cartProducts.map((product) => (
-        <CartCard cartProducts={product} />
+    <div className="cart-page">
+      <h1>Cart</h1>
+      {cartProducts.length && cartProducts.map((product) => (
+        <CartCard cartProducts={product} /> 
       ))}
     </div>
   );

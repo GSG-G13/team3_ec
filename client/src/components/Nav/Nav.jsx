@@ -1,8 +1,6 @@
 import "./nav.css";
 import Search from "../Searchinput/Search";
 import { Link, NavLink } from "react-router-dom";
-import { Home } from "../Home/Home";
-import { ProductsPage } from "../../pages/ProductsListPage";
 export const Nav = () => {
   return (
     <>

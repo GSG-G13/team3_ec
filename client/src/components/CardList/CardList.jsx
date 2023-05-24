@@ -3,7 +3,7 @@ import Card from '../Card/Card'
 import './cardlist.css'
 const CardList = ({ products }) => {
 
-
+    console.log(products);
 
     return (<div className="product-container">
         <div className="product-list">

@@ -8,7 +8,7 @@ export const RangeInput = ({min, max}) => {
                 <span>{min}</span>
                 <span>{max}</span>
             </div>
-            <input type="range" className="range-input" min={min} max={max} step={10}/>
+            <input type="range" className="range-input" min={min} max={max} defaultValue={max} step={10}/>
         </div>
     )
 }
