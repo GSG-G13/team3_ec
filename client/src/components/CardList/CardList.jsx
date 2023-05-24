@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import Card from '../Card/Card'
 import './cardlist.css'
-const CardList = ({ products, searchValue }) => {
+const CardList = ({ products }) => {
+
+    console.log(products);
 
     console.log(searchValue, "hhh");
     console.log(products, "kkkkkk");
