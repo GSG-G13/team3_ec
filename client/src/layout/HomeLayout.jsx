@@ -2,10 +2,10 @@ import './homeLayout.css'
 import { Nav } from '../components/Nav/nav';
 // import { Filter } from "../pages/Filter";
 import { Outlet } from 'react-router-dom';
-import { useState } from "react";
+import { createContext, useState } from "react";
 
 export const HomeLayout = () => {
-
+  const [searchValue, setSearchValue] = useState('')
   return (
     <>
       <header>

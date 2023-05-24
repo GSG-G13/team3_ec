@@ -19,7 +19,7 @@ export const Filter = ({ price, setPrice, category, setCategory }) => {
         </header>
 
         <h3 className="filter-h3">Price</h3>
-        <RangeInput min={300} max={1200} defaultValue={price} onChange={(e)=> setPrice(e.target.value)}/>
+        <RangeInput min={300} max={12000}  price={price} onChange={(e)=> setPrice(e.target.value)}/>
 
         <h3 className="filter-h3">Category</h3>
         <RadioInput label='all' onChange={handleRadio}  value='all' category={category}/>
