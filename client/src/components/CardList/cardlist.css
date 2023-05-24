@@ -6,6 +6,7 @@
 
 .product-container {
     text-align: center;
+    padding-top: 50px;
 }
 
 .product-container h1 {
@@ -14,6 +15,7 @@
     line-height: 1.2;
     font-weight: 600;
     color: #354d0d;
+    
 }
 
 .show-more {
