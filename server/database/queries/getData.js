@@ -53,4 +53,3 @@ export const getProductsByFilterAndSearch = (price, category, search) => {
   console.log(arr, '999999999999999999');
   return connection.query(query, arr);
 };
-
