@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+
+import { useOutletContext } from "react-router-dom";
 import Card from '../Card/Card'
 import './cardlist.css'
 const CardList = ({ products }) => {
 
     console.log(products);
-
+    const searchValue = useOutletContext();
     console.log(searchValue, "hhh");
     console.log(products, "kkkkkk");
     const filterdArray = products.filter(product => {

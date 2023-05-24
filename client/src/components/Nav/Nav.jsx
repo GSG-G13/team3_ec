@@ -1,7 +1,7 @@
 import "./nav.css";
 import { Link, NavLink } from "react-router-dom";
-import { Home } from "../Home/Home";
-import { ProductsPage } from "../../pages/ProductsListPage";
+// import { Home } from "../Home/Home";
+// import { ProductsPage } from "../../pages/ProductsListPage";
 
 export const Nav = ({ setSearchValue }) => {
 
