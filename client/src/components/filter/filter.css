@@ -8,7 +8,11 @@
     margin: 1.5rem 0;
 }
 .filter-page{
-    background-color: #eee;
+    background-color: #7ea18e;
     min-height: 90vh;
     padding: 12px
+}
+
+.filter-container{
+    position: fixed;
 }

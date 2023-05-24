@@ -17,5 +17,5 @@ router.use('/logout', logOutController);
 router.get('/products', getProducts)
 router.get('/cart', authChecker, getCartItem, errHandling)
 router.post('/cart', authChecker, addCartItem, errHandling);
-router.delete('/cart/:product_id', authChecker, deleteCartController)
+router.delete('/cart/:id', authChecker, deleteCartController)
 export default router;

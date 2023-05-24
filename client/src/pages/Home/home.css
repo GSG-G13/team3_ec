@@ -1,0 +1,41 @@
+.hero-img-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    background-image: url('../../assets/hero-img.jpg');
+}
+
+.text-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -76px;
+    left: 0;
+}
+
+.text-overlay-title {
+    color: #354d0d;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 4.625rem 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.bttn-lg {
+    padding: 0.5em 1.2em;
+    font-size: 1.25rem;
+    border-radius: 30px;
+}
+
+.shop-btn {
+    text-decoration: none;
+    color: white;
+
+}

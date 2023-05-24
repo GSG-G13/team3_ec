@@ -5,7 +5,8 @@ import InputField from "../../components/inputs/InputFiled";
 import Overlay from "../../components/Overlay/Overlay.jsx";
 import { useNavigate } from "react-router-dom";
 import { fetctLogin, fetctSignUp } from "./fetchData";
-const Login = () => {
+
+export const Login = () => {
   const [active, setActive] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,15 +35,13 @@ const Login = () => {
   };
 
   const signuoClick = () => {
-    fetctSignUp(signupName, signupEmail, signupPassword)
-	
-	.then(data => {
-		if(!data.error){
-			return useNavig('/')
-		}else{
-			return alert('Problem')
-		}
-	})
+    fetctSignUp(signupName, signupEmail, signupPassword).then((data) => {
+      if (!data.error) {
+        return useNavig("/");
+      } else {
+        return alert("Problem");
+      }
+    });
   };
 
   // useEffect(() => {
@@ -149,4 +148,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+
