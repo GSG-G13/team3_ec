@@ -5,9 +5,6 @@ import { Outlet } from 'react-router-dom';
 import { useState } from "react";
 
 export const HomeLayout = () => {
-  const [searchValue, setSearchValue] = useState("");
-  console.log(searchValue, "home layout")
-
 
   return (
     <>

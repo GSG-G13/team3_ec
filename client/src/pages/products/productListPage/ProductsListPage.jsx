@@ -3,20 +3,23 @@ import { useEffect, useState } from "react";
 import CardList from "../../../components/CardList/CardList";
 
 
-export const ProductsPage = () => {
+export const ProductsPage = ({search}) => {
   const [products, setProducts] = useState([]);
+  const [price, setPrice] = useState(12000)
+  const [category, setCategory]= useState('all')
+
+console.log(search,'****/*');
+
   useEffect(() => {
-    fetch("api/v1/products")
+    fetch(`api/v1/products/?price=${price}&category=${category}&search=${search}`)
       .then((data) => data.json())
       .then((data) => setProducts((prev) => data.data));
   }, []);
 
-  const handleChange = (products) => {
-    setProducts(products);
-  };
+ 
   return (
     <div className="products-container">
-      <Filter />
+      <Filter price={price} setPrice={setPrice} category={category} setCategory={setCategory} />
       <CardList products={products} />
      
     </div>
