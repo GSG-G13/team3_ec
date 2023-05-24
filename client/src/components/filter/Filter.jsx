@@ -10,12 +10,17 @@ export const Filter = ({ price, setPrice, category, setCategory }) => {
     setCategory(e.target.value)
   }
 
+
+
   return (
     <div className="filter-page">
       <div className="filter-container">
         <header className="filter-header">
           <h3 className="filter-h3">Filter</h3>
-          <TextButton name="Clear" />
+          <TextButton name="Clear" onClick={()=>{
+            setCategory('all')
+            setPrice(12000)
+          }}/>
         </header>
 
         <h3 className="filter-h3">Price</h3>
