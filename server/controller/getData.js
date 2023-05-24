@@ -1,7 +1,10 @@
-import { getAllProducts, getProduct } from '../database/queries/getData.js';
+import { getAllProducts, getProduct, getProductsByFilterAndSearch } from '../database/queries/getData.js';
+
 
 export const getProducts = (req, res) => {
-  getAllProducts().then((data) => res.json({
+  console.log(req.query);
+  const {price, category, search} = req.query
+  getProductsByFilterAndSearch(price, category, search).then((data) => res.json({
     error: false,
     message: 'Fetch data successfully',
     data: data.rows

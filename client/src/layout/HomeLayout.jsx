@@ -4,6 +4,7 @@ import { Filter } from "../components/filter/Filter";
 import { Outlet } from "react-router-dom";
 
 export const HomeLayout = () => {
+  
   return (
     <>
       <header>
