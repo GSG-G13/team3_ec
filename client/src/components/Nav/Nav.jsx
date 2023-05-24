@@ -1,9 +1,10 @@
 import "./nav.css";
-import Search from "../Searchinput/Search";
 import { Link, NavLink } from "react-router-dom";
 import { Home } from "../Home/Home";
 import { ProductsPage } from "../../pages/ProductsListPage";
-export const Nav = () => {
+
+export const Nav = ({ setSearchValue }) => {
+
   return (
     <>
       <header className="navbar-home">
@@ -33,7 +34,10 @@ export const Nav = () => {
             </li>
           </ul>
           <div className="navbar-right-aligned">
-            <Search />
+            <div className="pseudo-search">
+              <input type="search" placeholder="Search..." autoFocus required onChange={(e) => setSearchValue(e.target.value)} />
+              <button className="fa fa-search" type="submit" ></button>
+            </div>
             <ul className="navbar-nav navbar-fixed">
               <li className="nav-item">
                 <Link to={"/cart"} className="nav-icon-link">
