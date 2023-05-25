@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { fetctLogin, fetctSignUp } from "./fetchData";
 
 export const Login = () => {
+
   const [active, setActive] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,8 +16,12 @@ export const Login = () => {
   const [signupName, setSignupName] = useState("");
   const [signupEmail, setSignupEmail] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-  const useNavig = useNavigate();
+  const [errorMessage, setErrorMessage] = useState([]);
+  const [errorMessage2, setErrorMessage2] = useState([]);
+  console.log(errorMessage2);
 
+  const useNavig = useNavigate();
+  console.log(errorMessage, "ggg")
   const handlerEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -27,10 +32,14 @@ export const Login = () => {
 
   const loginClick = () => {
     fetctLogin(email, password).then((data) => {
-      console.log(data);
+
       if (data.status === 200) {
         useNavig("/");
       }
+      if (data.error) {
+        setErrorMessage(data.message)
+      }
+
     });
   };
 
@@ -38,21 +47,14 @@ export const Login = () => {
     fetctSignUp(signupName, signupEmail, signupPassword).then((data) => {
       if (!data.error) {
         return useNavig("/");
-      } else {
-        return alert("Problem");
+      }
+      if (data.error) {
+        setErrorMessage2(data.message)
       }
     });
   };
 
-  // useEffect(() => {
 
-  // 	fetctSignUp(name, email, password)
-  // 		.then(data => {
-  // 			console.log(data);
-
-  // 		})
-
-  // }, [setClickSignUp])
 
   return (
     <>
@@ -84,7 +86,9 @@ export const Login = () => {
               placeholder="Password"
               onChange={(e) => setSignupPassword(e.target.value)}
             />
-
+            {errorMessage2.length > 0 && errorMessage2.map(error => (
+              <div><p className="errors">{error}</p></div>
+            ))}
             <button className="btn" onClick={signuoClick}>
               Sign Up
             </button>
@@ -109,6 +113,11 @@ export const Login = () => {
               placeholder="password"
               onChange={handlerPassword}
             />
+
+            {errorMessage.length > 0 && errorMessage.map(error => (
+              <p className="errors">{error}</p>
+            ))}
+
 
             <a href="#">Forgot your password?</a>
             <button className="btn" onClick={() => loginClick()}>
