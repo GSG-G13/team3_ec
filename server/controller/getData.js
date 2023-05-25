@@ -2,7 +2,6 @@ import {  getProduct, getProductsByFilterAndSearchWithPage, getProductsCountQuer
 
 
 export const getProducts = (req, res) => {
-  console.log(req.query);
   const {page, price, category, search} = req.query
   getProductsByFilterAndSearchWithPage((page - 1) * 5, price, category, search).then((data) => res.json({
     error: false,

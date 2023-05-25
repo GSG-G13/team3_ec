@@ -14,23 +14,6 @@ export const getProduct = (id) => {
   return connection.query(sql);
 }
 
-
-// export const getProductsByFilterAndSearch = (price, category, search) => {
-
-//   console.log(price, category, search, 'lllllllllllllll');
-//   let arr = [price]
-//   if(category !== 'all') arr.push(category)
-//   else if(search !== "") arr.push(search)
-//   console.log(arr,'999999999999999999');
-//   return connection.query(
-//     `
-//     SELECT * FROM products WHERE price <= $1 
-//     ${category != "all" ? 'AND category = $2':""} 
-//     ${search != "" ? `AND name iLike '%$3%'` :""} 
-//     `, arr
-//   )
-// }
-
 export const getProductsByFilterAndSearchWithPage = (page,  price, category, search) => {
 
   let arr = [page,  price];
@@ -48,10 +31,6 @@ export const getProductsByFilterAndSearchWithPage = (page,  price, category, sea
     ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$3' : '$4'}`  : ''}
     LIMIT 5 OFFSET $1
   `;
-
-  
-
-
   return connection.query(query, arr);
 };
 
@@ -72,9 +51,5 @@ export const getProductsCountQuery = (price, category, search) => {
     ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$2' : '$3'}`  : ''}
     
   `;
-
-  
-
-
   return connection.query(query, arr);
 }
