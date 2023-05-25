@@ -4,6 +4,7 @@ import {
 } from '../controller/index.js';
 import { errHandling } from '../middleware/error.js';
 import authChecker from '../middleware/authChecker.js';
+
 import { getCartItem } from '../controller/getCartItem.js';
 import addCartItem from '../controller/addCartItem.js';
 
@@ -14,7 +15,7 @@ router.post('/signup', addUser, errHandling);
 router.get('/product/:id', getProductById);
 router.post('/signin', signinController, errHandling);
 router.use('/logout', logOutController);
-router.get('/products', getProducts)
+router.get('/products', authChecker, getProducts)
 router.get('/cart', authChecker, getCartItem, errHandling)
 router.post('/cart', authChecker, addCartItem, errHandling);
 router.delete('/cart/:id', authChecker, deleteCartController)
