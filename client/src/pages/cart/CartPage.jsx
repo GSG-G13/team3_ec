@@ -8,16 +8,14 @@ export const CartPage = () => {
     fetch("api/v1/cart")
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
         setCartProducts(data.data);
       });
-  },[] );
-  console.log(cartProducts);
+  }, []);
   return (
     <div className="cart-page">
       <h1>Cart</h1>
       {cartProducts.length && cartProducts.map((product) => (
-        <CartCard cartProducts={product} /> 
+        <CartCard cartProducts={product} />
       ))}
     </div>
   );

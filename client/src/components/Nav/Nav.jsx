@@ -3,30 +3,29 @@ import { Link, NavLink, useOutletContext } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
-export const Nav = ({ setSearchValue,cartCount, setCartCount }) => {
-
+export const Nav = ({ setSearchValue, cartCount, setCartCount }) => {
   const [token, setToken] = useState(false);
- 
+
   useEffect(() => {
     const storedToken = Cookies.get('token');
     if (storedToken) {
       setToken(true);
     }
-  
+
   }, []);
   useEffect(() => {
     fetch('api/v1/cart')
       .then((data) => data.json())
       .then((data) => setCartCount(data.data.length))
-  },[token])
- 
+  }, [token])
+
 
   const handleLogout = () => {
     Cookies.remove('token');
     setToken(false);
     fetch('api/v1/logout')
-  
-  } 
+
+  }
   return (
     <>
       <header className="navbar-home">
@@ -69,29 +68,25 @@ export const Nav = ({ setSearchValue,cartCount, setCartCount }) => {
                 </Link>
               </li>}
               <li className="nav-item">
-                
-                  {/* {token}? <Link to={"/login"} className="nav-icon-link">
-                  <i class="nav-icon fas fa-user-circle"></i>
-                </Link> : <div>hi</div> */}
                 {token ? (
                   <>
-                    <Link to={"/"}>
-                      <button onClick={handleLogout} className="btn">Logout</button>
+                    <Link to={"/"} className="nav-icon-link">
+                      <i onClick={handleLogout} class="fa-solid fa-right-from-bracket"></i>
                     </Link>
-        
+
                   </>
-                 
+
                 ) : (
-                  
-                      <Link to={"/login"} className="nav-icon-link">
-                        <i class="nav-icon fas fa-user-circle"></i>
-                      </Link>
-                      
-                   
+
+                  <Link to={"/login"} className="nav-icon-link">
+                    <i class="nav-icon fas fa-user-circle"></i>
+                  </Link>
+
+
                 )}
-               
-                
-              
+
+
+
               </li>
             </ul>
           </div>
