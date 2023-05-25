@@ -74,20 +74,27 @@ export const Login = () => {
               className="inputFiled"
               onChange={(e) => setSignupName(e.target.value)}
             />
+            {errorMessage2.length > 0 && errorMessage2.map(error => (
+              (error.includes("name")) && <p className="errors">{error}</p>
+            ))}
             <input
               type="email"
               className="inputFiled"
               placeholder="Email"
               onChange={(e) => setSignupEmail(e.target.value)}
             />
+            {errorMessage2.length > 0 && errorMessage2.map(error => (
+              (error.includes("email")) && <p className="errors">{error}</p>
+            ))}
             <input
               type="Password"
               className="inputFiled"
               placeholder="Password"
               onChange={(e) => setSignupPassword(e.target.value)}
             />
+
             {errorMessage2.length > 0 && errorMessage2.map(error => (
-              <div><p className="errors">{error}</p></div>
+              (error.includes("password")) && <p className="errors">{error}</p>
             ))}
             <button className="btn" onClick={signuoClick}>
               Sign Up
@@ -107,6 +114,9 @@ export const Login = () => {
               placeholder="Email"
               onChange={handlerEmail}
             />
+            {errorMessage.length > 0 && errorMessage.map(error => (
+              (error.includes("email")) && <p className="errors">{error}</p>
+            ))}
             <input
               className="inputFiled"
               type="password"
@@ -115,7 +125,7 @@ export const Login = () => {
             />
 
             {errorMessage.length > 0 && errorMessage.map(error => (
-              <p className="errors">{error}</p>
+              (error.includes("password")) && <p className="errors">{error}</p>
             ))}
 
 
