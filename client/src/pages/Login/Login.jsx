@@ -18,10 +18,10 @@ export const Login = () => {
   const [signupPassword, setSignupPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState([]);
   const [errorMessage2, setErrorMessage2] = useState([]);
-  console.log(errorMessage2);
+
 
   const useNavig = useNavigate();
-  console.log(errorMessage, "ggg")
+
   const handlerEmail = (e) => {
     setEmail(e.target.value);
   };

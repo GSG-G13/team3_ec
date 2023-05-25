@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import pdt from '../../assets/hero-img.jpg'
 import './home.css'
 export const Home = () => {
     return (<div className="hero-img-wrapper">
@@ -11,17 +10,6 @@ export const Home = () => {
                 </Link>
             </button>
         </div>
-        <a href="#">
-
-            <picture>
-                <img
-                    className="home-page-banner responsive-img"
-                    src={pdt}
-                    alt="plants"
-                />
-            </picture>
-
-        </a>
     </div>
     )
 }

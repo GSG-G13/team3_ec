@@ -3,19 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 const CartCard = ({ cartProducts }) => {
     const useNavig = useNavigate();
-    
-   
+
+
     const handlerDeleteCart = () => {
-        
+
         fetch(`api/v1/cart/${cartProducts.cart_id}`, {
             method: "DELETE",
         }).then((data) => data.json())
-        .then(data => {
-            if(!data.error){
-                useNavig(0)
-            }
-        })
-        
+            .then(data => {
+                if (!data.error) {
+                    useNavig(0)
+                }
+            })
+
     }
     return (
         <div className="card-horizontal cart-item" >
@@ -36,9 +36,9 @@ const CartCard = ({ cartProducts }) => {
                     <h5 className="card-price">
                         Price: ${cartProducts.price * cartProducts.amount}
                     </h5>
-                    <div className="button-container  items-center">  
+                    <div className="button-container  items-center">
                         <div className="">Quantity: {cartProducts.amount}</div>
-                        </div>
+                    </div>
 
                 </div>
             </div>

@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-around;
     width: 70%;
-    
+
     text-align: left;
     background-color: #fff;
 }
@@ -54,13 +54,13 @@
     position: absolute;
     top: .8rem;
     right: .8rem;
-    background-color: #ffa9a9;
+    background-color: #5B7B35;
     color: #ffffff;
     transition: all .3s ease 0s;
 }
 
 .btn-close:hover {
-    color: brown;
+    color: #eee;
 }
 
 .items-center {

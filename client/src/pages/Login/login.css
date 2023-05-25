@@ -28,8 +28,7 @@
              .btn {
              	border-radius: 20px;
              	border: 1px solid #fff;
-             	background: rgba(152, 195, 53, 0.756827731092437);
-             	color: #FFFFFF;
+             	background: #476123;
              	font-size: 12px;
              	font-weight: bold;
              	padding: 12px 45px;
@@ -37,7 +36,7 @@
              	text-transform: uppercase;
              	transition: transform 80ms ease-in;
              	cursor: pointer;
-
+             	color: white;
              }
 
              .btn:active {
@@ -148,9 +147,8 @@
              }
 
              .overlay {
+             	background-color: #476123;
 
-             	background: rgb(217, 205, 191);
-             	background: radial-gradient(circle, rgba(217, 205, 191, 1) 0%, rgba(152, 195, 53, 1) 100%);
              	background-repeat: no-repeat;
              	background-size: contain;
              	background-position: 0 0;
