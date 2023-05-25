@@ -29,6 +29,7 @@ const signinController = (req, res, next) => {
       res.cookie('token', token).json({
         status: 200,
         message: 'Sign In successfully ',
+        data:req.user.username
       });
     })
     .catch((error) => {

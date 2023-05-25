@@ -1,10 +1,32 @@
 import "./nav.css";
-import { Link, NavLink } from "react-router-dom";
-// import { Home } from "../Home/Home";
-// import { ProductsPage } from "../../pages/ProductsListPage";
+import { Link, NavLink, useOutletContext } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
-export const Nav = ({ setSearchValue }) => {
+export const Nav = ({ setSearchValue,cartCount, setCartCount }) => {
 
+  const [token, setToken] = useState(false);
+ 
+  useEffect(() => {
+    const storedToken = Cookies.get('token');
+    if (storedToken) {
+      setToken(true);
+    }
+  
+  }, []);
+  useEffect(() => {
+    fetch('api/v1/cart')
+      .then((data) => data.json())
+      .then((data) => setCartCount(data.data.length))
+  },[token])
+ 
+
+  const handleLogout = () => {
+    Cookies.remove('token');
+    setToken(false);
+    fetch('api/v1/logout')
+  
+  } 
   return (
     <>
       <header className="navbar-home">
@@ -39,15 +61,37 @@ export const Nav = ({ setSearchValue }) => {
               <button className="fa fa-search" type="submit" ></button>
             </div>
             <ul className="navbar-nav navbar-fixed">
-              <li className="nav-item">
+              {token && <li className="nav-item">
                 <Link to={"/cart"} className="nav-icon-link">
+
                   <i class="fa-solid fa-bag-shopping"></i>
+                  <span className="counter_span">{cartCount}</span>
                 </Link>
-              </li>
+              </li>}
               <li className="nav-item">
-                <Link to={"/login"} className="nav-icon-link">
+                
+                  {/* {token}? <Link to={"/login"} className="nav-icon-link">
                   <i class="nav-icon fas fa-user-circle"></i>
-                </Link>
+                </Link> : <div>hi</div> */}
+                {token ? (
+                  <>
+                    <Link to={"/"}>
+                      <button onClick={handleLogout} className="btn">Logout</button>
+                    </Link>
+        
+                  </>
+                 
+                ) : (
+                  
+                      <Link to={"/login"} className="nav-icon-link">
+                        <i class="nav-icon fas fa-user-circle"></i>
+                      </Link>
+                      
+                   
+                )}
+               
+                
+              
               </li>
             </ul>
           </div>

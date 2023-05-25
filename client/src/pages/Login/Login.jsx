@@ -34,7 +34,7 @@ export const Login = () => {
     fetctLogin(email, password).then((data) => {
 
       if (data.status === 200) {
-        useNavig("/");
+        useNavig(`/`);
       }
       if (data.error) {
         setErrorMessage(data.message)
