@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  logOutController, signinController, addUser, getProducts, getProductById, deleteCartController
+  logOutController, signinController, addUser, getProducts, getProductById, deleteCartController, getProductsCount
 } from '../controller/index.js';
 import { errHandling } from '../middleware/error.js';
 import authChecker from '../middleware/authChecker.js';
@@ -15,7 +15,8 @@ router.post('/signup', addUser, errHandling);
 router.get('/product/:id', getProductById);
 router.post('/signin', signinController, errHandling);
 router.use('/logout', logOutController);
-router.get('/products', authChecker, getProducts)
+router.get('/count', getProductsCount )
+router.get('/products', getProducts)
 router.get('/cart', authChecker, getCartItem, errHandling)
 router.post('/cart', authChecker, addCartItem, errHandling);
 router.delete('/cart/:id', authChecker, deleteCartController)

@@ -11,7 +11,7 @@ const signinController = (req, res, next) => {
     .then(() => signInQuery(email))
     .then((data) => {
       if (data.rowCount === 0) {
-        throw new CustomError(400, 'this email is not exists');
+        throw new CustomError(400, ['this email does not exists!!']);
       } else {
         req.user = data.rows[0];
         return bcrypt.compare(password, data.rows[0].password);
@@ -23,7 +23,7 @@ const signinController = (req, res, next) => {
           id: req.user.id, username: req.user.username, password: req.user.password, type: req.user.type, image_url: req.user.image_url,
         }, process.env.SECRET_KEY);
       }
-      throw new CustomError(400, 'Invalid password');
+      throw new CustomError(400, ['Invalid password!!']);
     })
     .then((token) => {
       res.cookie('token', token).json({
