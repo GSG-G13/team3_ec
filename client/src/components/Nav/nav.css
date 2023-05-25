@@ -83,9 +83,10 @@
     margin: 0 0.5rem;
     display: block;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #354d0d;
 }
+
 
 .nav-icon {
     width: 1.3rem;
@@ -122,4 +123,19 @@ i {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.counter_span{
+    position: relative;
+    color: #354d0d;
+    font-weight: bolder;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    width: 100%;
+    top:-5px;
+    padding: 3px;
+    font-size: 16px;
+
+    
+
 }

@@ -1,15 +1,17 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useOutletContext } from "react-router-dom";
 import "./productDetailPage.css";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'js-cookie';
 
 export const ProductDetailPage = () => {
   const params = useParams();
   const [product, setProduct] = useState({});
   const [amount, setAmount] = useState(1)
   const navigateTo = useNavigate();
-
+  const [searchValue, cartCount, setCartCount] = useOutletContext();
+  const [token, setToken] = useState(false);
   const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
   
 
@@ -20,6 +22,7 @@ export const ProductDetailPage = () => {
   }, []);
 
   const addToCart = () => {
+    setCartCount(cartCount + 1);
     fetch("/api/v1/cart", {
       method: "POST",
       headers: {
@@ -41,7 +44,21 @@ export const ProductDetailPage = () => {
           
         }
       })
-      .then(()=> navigateTo("/cart"));
+      .then(() => {
+        const storedToken = Cookies.get('token');
+        if (storedToken) {
+          setToken(true);
+          navigateTo("/cart")
+        } else {
+          return toast.promise(resolveAfter3Sec, {
+            pending: `you have to login first`,
+            error: "you have to login before",
+          }).then(() => {
+            navigateTo("/login")
+          })
+        }
+       
+      });
   };
 
   return (

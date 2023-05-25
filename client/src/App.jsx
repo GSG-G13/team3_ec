@@ -6,12 +6,14 @@ import { Home } from "./pages/Home/Home";
 import { ProductsPage } from "./pages/products/productListPage/ProductsListPage"
 import { ProductDetailPage } from "./pages/products/productDetail/ProductDetailPage";
 import { CartPage } from "./pages/cart/CartPage";
+import  ErrorPage  from "./pages/Error/error";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

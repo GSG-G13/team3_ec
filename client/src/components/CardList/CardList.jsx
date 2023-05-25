@@ -5,7 +5,7 @@ import './cardlist.css'
 const CardList = ({ products }) => {
 
     console.log(products);
-    const searchValue = useOutletContext();
+    const [searchValue,cartCount, setCartCount] = useOutletContext();
     console.log(searchValue, "hhh");
     console.log(products, "kkkkkk");
     const filterdArray = products.filter(product => {

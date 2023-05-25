@@ -29,7 +29,7 @@ export const Login = () => {
     fetctLogin(email, password).then((data) => {
       console.log(data);
       if (data.status === 200) {
-        useNavig("/");
+        useNavig(`/`);
       }
     });
   };
