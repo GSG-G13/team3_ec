@@ -3,7 +3,7 @@ import { Link, NavLink, useOutletContext } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
-export const Nav = ({ cartCount, setCartCount }) => {
+export const Nav = ({ setSearchValue,cartCount, setCartCount }) => {
 
   const [token, setToken] = useState(false);
  

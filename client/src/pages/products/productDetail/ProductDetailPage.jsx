@@ -10,7 +10,7 @@ export const ProductDetailPage = () => {
   const [product, setProduct] = useState({});
   const [amount, setAmount] = useState(1)
   const navigateTo = useNavigate();
-  const [searchValue, cartCount, setCartCount] = useOutletContext();
+  const [cartCount, setCartCount] = useOutletContext();
   const [token, setToken] = useState(false);
   const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
   

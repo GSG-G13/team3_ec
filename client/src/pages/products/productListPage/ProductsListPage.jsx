@@ -25,7 +25,7 @@ export const ProductsPage = () => {
 
   return (
     <div className="products-container">
-      <Filter price={price} setPrice={setPrice} category={category} setCategory={setCategory} />
+      <Filter price={price} setPrice={setPrice} category={category} setCategory={setCategory} setPage={setPage } />
       <CardList products={products} setPage={setPage}  price={price} category={category} search={searchValue}  />
       
     </div>
