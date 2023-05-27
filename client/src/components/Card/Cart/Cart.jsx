@@ -1,8 +1,9 @@
 import './cart.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const CartCard = ({ cartProducts, setCartProducts }) => {
     const useNavig = useNavigate();
+    const [cartCount, setCartCount] = useOutletContext();
 
 
     const handlerDeleteCart = () => {
@@ -12,6 +13,7 @@ const CartCard = ({ cartProducts, setCartProducts }) => {
         }).then((data) => data.json())
             .then(data => {
                 if (!data.error) {
+                    setCartCount((prev) => prev -1)
                     setCartProducts((prev) => prev.filter(products => products.id != cartProducts.id))
                 }
             })
