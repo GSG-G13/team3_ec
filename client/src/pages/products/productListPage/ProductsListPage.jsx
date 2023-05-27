@@ -17,7 +17,7 @@ export const ProductsPage = () => {
     fetch(`api/v1/products/?page=${page}&price=${price}&category=${category}&search=${searchValue}`)
       .then((data) => data.json())
       .then((data) => {
-        setProducts((prev) => data.data)
+        setProducts(data.data)
        
         
       });

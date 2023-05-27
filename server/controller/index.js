@@ -1,9 +1,9 @@
-import addUser from './auth/signup.js';
-import signinController from './auth/signin.js';
-import logOutController from './auth/logout.js';
-import { getProducts, getProductById, getProductsCount } from './getData.js';
-import {deleteCartController} from "./deletecart.js";
+const addUser = require('./auth/signup.js');
+const signinController = require('./auth/signin.js');
+const logOutController = require('./auth/logout.js');
+const { getProducts, getProductById, getProductsCount } = require('./getData.js');
+const {deleteCartController} = require("./deletecart.js");
 
-export {
+module.exports =  {
   addUser, getProducts, logOutController, signinController, getProductById, deleteCartController, getProductsCount
 };

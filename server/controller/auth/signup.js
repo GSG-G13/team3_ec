@@ -1,9 +1,16 @@
-import * as bcrybt from 'bcrypt';
-import { SignUpSchema } from '../../validation/AuthSchema.js';
-import { addUserQuery } from '../../database/queries/auth/signupquery.js';
-import { jwtSign } from '../../helper/jwtSign.js';
-import CustomError from '../../helper/CustomError.js';
-import signInQuery from '../../database/queries/auth/signinquery.js';
+// import * as bcrybt from 'bcrypt';
+// import { SignUpSchema } from '../../validation/AuthSchema.js';
+// import { addUserQuery } from '../../database/queries/auth/signupquery.js';
+// import { jwtSign } from '../../helper/jwtSign.js';
+// import CustomError from '../../helper/CustomError.js';
+// import signInQuery from '../../database/queries/auth/signinquery.js';
+
+const bcrypt = require('bcrypt')
+const { SignUpSchema } = require('../../validation/AuthSchema.js')
+const { addUserQuery } = require('../../database/queries/auth/signupquery.js')
+const { jwtSign } = require('../../helper/jwtSign.js')
+const CustomError = require('../../helper/CustomError.js')
+const signInQuery = require('../../database/queries/auth/signinquery.js')
 
 const addUser = (req, res, next) => {
   const { password, email } = req.body;
@@ -12,7 +19,7 @@ const addUser = (req, res, next) => {
     if (result.rowCount) {
       throw new CustomError(400, ["email is already exists!!"])
     } else {
-      return bcrybt.hash(password, 7)
+      return bcrypt.hash(password, 7)
     }
   }).then((hashedPassword) => {
     req.body.password = hashedPassword;
@@ -38,4 +45,4 @@ const addUser = (req, res, next) => {
       }
     });
 };
-export default addUser;
+module.exports =  addUser;

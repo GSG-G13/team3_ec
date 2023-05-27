@@ -1,18 +1,15 @@
 /* eslint-disable import/extensions */
 // require('dotenv').config()
 
-import express from 'express';
-//import { join } from 'path';
-import cookieParser from 'cookie-parser';
-import router from './routers/router.js';
-import cors from 'cors';
-import { } from 'dotenv/config';
+const express = require('express');
 
-// const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const router = require('./routers/router.js');
+const cors = require('cors');
+require('dotenv').config()
+const { join } = require('path')
 
-// const { join } = require('path')
 
-// import router from './routers/router'
 
 const app = express();
 
@@ -25,9 +22,15 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use(express.static(join(__dirname, '..', 'public')));
 
 
-app.use('/api/v1', router);
 
-export default app;
+ app.use(express.static(join(__dirname, '../client/dist')));
+
+app.get('/', (req, res) => {
+    res.sendFile(join(__dirname, '../client/dist/index.html'))
+})
+app.use('/api/v1',router);
+
+
+module.exports = app;

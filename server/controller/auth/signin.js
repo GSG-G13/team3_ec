@@ -1,9 +1,15 @@
-import { } from 'dotenv/config';
-import bcrypt from 'bcrypt';
-import signInQuery from '../../database/queries/auth/signinquery.js';
-import { jwtSign } from '../../helper/jwtSign.js';
-import CustomError from '../../helper/CustomError.js';
-import { LoginSchema } from '../../validation/login.js';
+// import { } from 'dotenv/config';
+// import bcrypt from 'bcrypt';
+// import signInQuery from '../../database/queries/auth/signinquery.js';
+// import { jwtSign } from '../../helper/jwtSign.js';
+// import CustomError from '../../helper/CustomError.js';
+// import { LoginSchema } from '../../validation/login.js';
+require('dotenv').config
+const bcrypt = require('bcrypt')
+const signInQuery = require('../../database/queries/auth/signinquery.js')
+const { jwtSign } = require('../../helper/jwtSign.js')
+const CustomError = require('../../helper/CustomError.js')
+const { LoginSchema } = require('../../validation/login.js')
 
 const signinController = (req, res, next) => {
   const { email, password } = req.body;
@@ -42,4 +48,4 @@ const signinController = (req, res, next) => {
     });
 };
 
-export default signinController;
+module.exports = signinController;

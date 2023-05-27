@@ -15,7 +15,7 @@ export const CartPage = () => {
     <div className="cart-page">
       <h1>Cart</h1>
       {cartProducts.length && cartProducts.map((product) => (
-        <CartCard cartProducts={product} />
+        <CartCard key={product.id} cartProducts={product} setCartProducts={setCartProducts}/>
       ))}
     </div>
   );

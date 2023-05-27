@@ -1,7 +1,7 @@
 import './cart.css'
 import { useNavigate } from "react-router-dom";
 
-const CartCard = ({ cartProducts }) => {
+const CartCard = ({ cartProducts, setCartProducts }) => {
     const useNavig = useNavigate();
 
 
@@ -12,7 +12,7 @@ const CartCard = ({ cartProducts }) => {
         }).then((data) => data.json())
             .then(data => {
                 if (!data.error) {
-                    useNavig(0)
+                    setCartProducts((prev) => prev.filter(products => products.id != cartProducts.id))
                 }
             })
 

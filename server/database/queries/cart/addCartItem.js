@@ -1,5 +1,5 @@
-import connection from '../../config/config/connection.js';
+const connection = require('../../config/config/connection.js');
 
-export default function addCartItemQuery(user_id, product_id, amount) {
+exports.addCartItemQuery = (user_id, product_id, amount) => {
     return connection.query('INSERT INTO cart (user_id, product_id, amount) VALUES ($1, $2, $3) RETURNING * ;', [user_id, product_id, amount]);
 }
