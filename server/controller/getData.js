@@ -1,7 +1,7 @@
-import {  getProduct, getProductsByFilterAndSearchWithPage, getProductsCountQuery } from '../database/queries/getData.js';
+const  {  getProduct, getProductsByFilterAndSearchWithPage, getProductsCountQuery } = require('../database/queries/getData.js');
 
 
-export const getProducts = (req, res) => {
+exports.getProducts = (req, res) => {
   const {page, price, category, search} = req.query
   getProductsByFilterAndSearchWithPage((page - 1) * 5, price, category, search).then((data) => res.json({
     error: false,
@@ -9,7 +9,7 @@ export const getProducts = (req, res) => {
     data: data.rows
   }));
 };
-export const getProductById = (req, res) => {
+exports.getProductById = (req, res) => {
   const { id } = req.params;
   getProduct(id).then(data => res.json({
     error: false,
@@ -17,7 +17,7 @@ export const getProductById = (req, res) => {
   }))
 }
 
-export const getProductsCount = (req,res) => {
+exports.getProductsCount = (req,res) => {
   
   const { price, category, search } = req.query
   getProductsCountQuery(price, category, search)

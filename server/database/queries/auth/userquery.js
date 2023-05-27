@@ -1,6 +1,6 @@
-import connection from '../../config/config/connection.js';
+const connection = require('../../config/config/connection.js');
 
-export const getUserQuery = () => {
+exports.getUserQuery = () => {
   
     return connection.query(
         'select username,image_url from users'

@@ -1,8 +1,8 @@
-import connection from '../../config/config/connection.js';
+const connection = require('../../config/config/connection.js');
 
 
-export default function deleteCart(id) {
-    
+exports.deleteCart = (id) => {
+
     const sql = {
         text: 'DELETE FROM cart WHERE  id= $1 RETURNING * ',
         values: [id]

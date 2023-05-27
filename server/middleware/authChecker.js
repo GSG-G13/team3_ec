@@ -1,7 +1,8 @@
-import { jwtVerify } from '../helper/jwtSign.js';
-import CustomError from '../helper/CustomError.js';
+const { jwtVerify } = require('../helper/jwtSign.js');
+const CustomError = require('../helper/CustomError.js');
 
-export default function authChecker(req, res, next) {
+
+const authChecker = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
     req.userDate = undefined;
@@ -17,3 +18,5 @@ export default function authChecker(req, res, next) {
       next(new CustomError(401, 'Invalid Token'));
     });
 };
+
+module.exports = authChecker

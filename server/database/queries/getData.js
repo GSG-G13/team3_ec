@@ -1,12 +1,12 @@
-import connection from '../config/config/connection.js';
+const connection = require('../config/config/connection.js');
 
-export const getAllProducts = () => {
+exports.getAllProducts = () => {
   const sql = {
     text: 'SELECT *FROM products',
   };
   return connection.query(sql);
 };
-export const getProduct = (id) => {
+exports.getProduct = (id) => {
   const sql = {
     text: 'SELECT *FROM products WHERE id=$1',
     values: [id],
@@ -14,9 +14,9 @@ export const getProduct = (id) => {
   return connection.query(sql);
 }
 
-export const getProductsByFilterAndSearchWithPage = (page,  price, category, search) => {
+exports.getProductsByFilterAndSearchWithPage = (page, price, category, search) => {
 
-  let arr = [page,  price];
+  let arr = [page, price];
 
   if (category !== 'all') {
     arr.push(category);
@@ -28,14 +28,14 @@ export const getProductsByFilterAndSearchWithPage = (page,  price, category, sea
   let query = `
     SELECT * FROM products WHERE price <= $2 
     ${category !== 'all' ? 'AND category = $3' : ''}
-    ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$3' : '$4'}`  : ''}
+    ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$3' : '$4'}` : ''}
     LIMIT 5 OFFSET $1
   `;
   return connection.query(query, arr);
 };
 
-export const getProductsCountQuery = (price, category, search) => {
- 
+exports.getProductsCountQuery = (price, category, search) => {
+
   let arr = [price];
 
   if (category !== 'all') {
@@ -48,7 +48,7 @@ export const getProductsCountQuery = (price, category, search) => {
   let query = `
     SELECT count(*) FROM products WHERE price <= $1 
     ${category !== 'all' ? 'AND category = $2' : ''}
-    ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$2' : '$3'}`  : ''}
+    ${search !== '' ? `AND name ILIKE ${category === 'all' ? '$2' : '$3'}` : ''}
     
   `;
   return connection.query(query, arr);

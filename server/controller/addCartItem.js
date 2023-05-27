@@ -1,7 +1,10 @@
-import addCartItemQuery from "../database/queries/cart/addCartItem.js";
-import CustomError from '../helper/CustomError.js'
+// import addCartItemQuery from "../database/queries/cart/addCartItem.js";
+// import CustomError from '../helper/CustomError.js'
 
-export default function addCartItem(req, res, next) {
+const { addCartItemQuery } = require("../database/queries/cart/addCartItem.js")
+const CustomError = require('../helper/CustomError.js')
+
+exports.addCartItem = (req, res, next) => {
     if (!req.userData) {
         next(new CustomError(401, 'You need to login'))
     }

@@ -1,4 +1,4 @@
-import connection from '../../config/config/connection.js';
+const connection = require('../../config/config/connection.js');
 
 const signInQuery = (email) => {
   const option = {
@@ -8,4 +8,4 @@ const signInQuery = (email) => {
   return connection.query(option);
 };
 
-export default signInQuery;
+module.exports = signInQuery;

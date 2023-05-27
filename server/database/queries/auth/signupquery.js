@@ -1,6 +1,6 @@
-import connection from '../../config/config/connection.js';
+const connection = require('../../config/config/connection.js');
 
-export const addUserQuery = (userData) => {
+exports.addUserQuery = (userData) => {
   const {
     username, email, password, type, image_url,
   } = userData;

@@ -1,4 +1,5 @@
-import { getUserQuery } from "../../database/queries/auth/userquery.js";
+// import { getUserQuery } from "../../database/queries/auth/userquery.js";
+const { getUserQuery } = require('../../database/queries/auth/userquery.js')
 
  const getuserDataController = (req,res) => {
     getUserQuery()
@@ -10,4 +11,5 @@ import { getUserQuery } from "../../database/queries/auth/userquery.js";
             
         })
 }
-export default getuserDataController;
+// export default getuserDataController;
+module.exports = getuserDataController

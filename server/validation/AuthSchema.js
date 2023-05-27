@@ -1,6 +1,6 @@
-import Joi from 'joi';
+const Joi = require('joi');
 
-export const SignUpSchema = Joi.object({
+exports.SignUpSchema = Joi.object({
 
   username: Joi.string().required().min(3).max(50),
   email: Joi.string()
