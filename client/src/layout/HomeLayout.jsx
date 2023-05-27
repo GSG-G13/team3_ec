@@ -1,5 +1,5 @@
 import "./homeLayout.css";
-import { Nav } from "../components/Nav/nav";
+import { Nav } from "../components/Nav/Nav";
 // import { Filter } from "../pages/Filter";
 import { Outlet } from "react-router-dom";
 import { createContext, useState } from "react";
