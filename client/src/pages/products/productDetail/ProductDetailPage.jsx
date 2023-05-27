@@ -16,7 +16,7 @@ export const ProductDetailPage = () => {
   
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/product/${params.id}`)
+    fetch(`/api/v1/product/${params.id}`)
       .then((data) => data.json())
       .then((data) => setProduct((prev) => data.data[0]));
   }, []);
